@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+td, th {
+    width: 25%;
+    
+}
+
+td{
+    cursor: pointer;
+}
+
+body{
+    background-color: #343a40;
+}
+
+.row{
+    padding-bottom: 50px;
+}
+
+img{
+    max-width: 50px;
+    max-height: 50px;
+}

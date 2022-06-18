@@ -1,0 +1,26 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img  class="logo"src="../../assets/logo_1.png"></a>
+    <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="textoNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">Home <span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/pokemon">Pokedex</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/livro">Tabela de Livros</a>
+            </li>
+        </ul>
+    <div class="user-cotainer-info">
+        <span class="navbar-text" >
+        {{dados}}
+        </span>
+        <button (click)="logout()" type="button" class="btn btn-outline-warning">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></button>
+        
+    </div>
+    </div>
+</nav>  

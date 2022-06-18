@@ -1,0 +1,18 @@
+*{
+    color: #fff;
+}
+
+.lista-item{
+  list-style: none;
+  
+}
+
+a{
+  color: #fff;
+}
+
+img{
+  height: 30px;
+  width: 85px;
+  cursor: pointer;
+}

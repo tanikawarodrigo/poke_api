@@ -1,0 +1,57 @@
+<body>
+<header>
+    <app-navegador></app-navegador>
+</header>
+<div class="row"></div>
+<main>
+
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+     
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let pokemon"> {{pokemon.id}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nome </th>
+        <td mat-cell *matCellDef="let pokemon"> {{pokemon.nome}}</td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> categoria </th>
+        <td mat-cell *matCellDef="let pokemon"> {{pokemon.categoria}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> descricao </th>
+        <td mat-cell *matCellDef="let pokemon"> {{pokemon.descricao}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> PokeDex </th>
+        <td mat-cell *matCellDef="let pokemon"> <img src="../../assets/{{pokemon.image}}"> </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">nenhum pokemon foi encontrado.. "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione quantos registros quer que apareça"></mat-paginator>
+    </div>
+</main>
+</body>

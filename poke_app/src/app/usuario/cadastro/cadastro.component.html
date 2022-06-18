@@ -1,0 +1,74 @@
+<body>
+    <div class="cadastro-container">
+        <h1>Seja um treinador pokemon!</h1>
+        <form [formGroup] = "formCadastro" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" name="name" id="name" formControlName="name">
+                <span class="text-danger"
+                    *ngIf="(cadastroFormControl.name.touched || submitted) && cadastroFormControl.name.errors?.required">
+                    Campo obrigatório
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroFormControl.name.touched && cadastroFormControl.name.errors?.['pattern']">
+                    Use caracteres especiais e letras maiusculas ou minusculas
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Sobrenome</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" formControlName="last_name">
+                <span class="text-danger"
+                    *ngIf="(cadastroFormControl.last_name.touched || submitted) && cadastroFormControl.last_name.errors?.required">
+                    Campo obrigatório
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroFormControl.last_name.touched && cadastroFormControl.last_name.errors?.['pattern']">
+                    Use caracteres especiais e letras maiusculas ou minusculas
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" formControlName="email">
+                <span class="text-danger"
+                    *ngIf="(cadastroFormControl.email.touched || submitted) && cadastroFormControl.email.errors?.required">
+                    Campo obrigatório
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroFormControl.email.touched && cadastroFormControl.email.errors?.email">
+                    Entre com um email válido
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" name="senha" id="senha" formControlName="senha" >
+                <span class="text-danger"
+                    *ngIf="(cadastroFormControl.senha.touched || submitted) && cadastroFormControl.senha.errors?.required">
+                    Campo obrigatório
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroFormControl.senha.touched && cadastroFormControl.senha.errors?.['minlength']">
+                    A senha precisa ter no mínimo 5 digitos
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroFormControl.senha.touched && cadastroFormControl.senha.errors?.['pattern']">
+                    Use caracteres especiais e letras maiusculas ou minusculas
+                </span>
+            </div>
+            <div class="form-group" >
+                <label for="password-confirm">Password confirm</label>
+                <input type="password" class="form-control" name="confirma_senha" id="confirma_senha" formControlName="confirma_senha">
+                <span class="text-danger"
+                    *ngIf="(cadastroFormControl.confirma_senha.touched || submitted) && cadastroFormControl.confirma_senha.errors?.required">
+                    Campo obrigatório
+                </span>
+                <span class="text-danger"
+                *ngIf="cadastroFormControl.confirma_senha.touched && cadastroFormControl.confirma_senha.errors?.naoConfirmaSenha">
+                    Senhas diferentes
+                </span>
+            </div>
+            <input type="submit" class="btn-submit" value="cadastrar" >
+            
+            <a href="" class="">Cancelar</a>
+        </form>
+    </div>
+</body>
