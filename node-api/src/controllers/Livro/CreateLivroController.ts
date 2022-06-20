@@ -6,10 +6,10 @@ export class CreateLivroController{
         const { titulo } = req.body;
         const { descricao } = req.body;
         const { data_lancamento } = req.body;
-        const { image } = req.body;
+        
         const service = new CreateLivroService();
 
-        const result = await service.execute({titulo, descricao, data_lancamento,image});
+        const result = await service.execute({titulo, descricao, data_lancamento});
 
         if (result instanceof Error) return res.status(400).send(result.message);
 

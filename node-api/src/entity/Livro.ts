@@ -16,8 +16,6 @@ export class Livro {
     @Column()
     data_lancamento: string;
 
-    @Column()
-    image: string;
-    nullable: true;
+
     
 }
